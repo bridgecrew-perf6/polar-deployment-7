@@ -22,3 +22,12 @@ services:
       - BPL_DEBUG_PORT=8001
       - BPL_JVM_THREAD_COUNT=50
       - SPRING_DATASOURCE_URL=jdbc:postgresql://polar-postgres-catalog:5432/polardb_catalog
+  polar-postgres-order:
+    image: "postgres:13.4"
+    container_name: "polar-postgres-order"
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=polardb_order
